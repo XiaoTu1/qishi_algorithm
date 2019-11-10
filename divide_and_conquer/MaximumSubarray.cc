@@ -1,7 +1,6 @@
 class Solution {
 public:
     int maxSubArray(vector<int> &nums) {
-        // write your code here
         vector<int> prefixSum;
         prefixSum.push_back(0);
         int sum = 0;
