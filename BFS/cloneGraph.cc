@@ -23,14 +23,14 @@ public:
         queue<Node*> Q;
         unordered_map<Node*, Node*> clone;
         Q.push(node);
-        clone[node] = new Node(node->val, vector<Node*>());
+        clone[node] = new Node(node->val);
         
         while (!Q.empty()) {
             Node* head = Q.front();
             Q.pop();
             for (auto n: head->neighbors) {
                 if (clone.find(n) == clone.end()) {
-                    clone[n] = new Node(n->val, vector<Node*>());
+                    clone[n] = new Node(n->val);
                     Q.push(n);
                 }
                 clone[head]->neighbors.push_back(clone[n]);
